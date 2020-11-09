@@ -61,5 +61,5 @@ print('\n==================================================================\n')
 # Sort data ratings by created field (groupby + lambda function + sorted)
 platypus = cloneDF(mergeRatings)
 platypus = platypus.groupby(['movie_id', 'title'])['rating'].agg(
-    {'COUNT': np.size, 'myAVG': lambda x: x.sum() / float(x.count())}).sort('COUNT', ascending=False)
+    {'COUNT': np.size, 'myAVG': lambda x: x.sum() / float(x.count())}).sort_values('COUNT', ascending=False)
 print('My info sorted: \n%s' % platypus[:15])

@@ -59,14 +59,7 @@ print('\n==================================================================\n')
 
 
 # Sort data ratings by created field (groupby + lambda function + sorted)
-<<<<<<< HEAD
-sortRatingsField_MR = cloneDF(mergeRatings)
-sortRatingsField_MR = sortRatingsField_MR.groupby(['movie_id', 'title'])['rating'].agg(
-    {'COUNT': np.size, 'myAVG': lambda x: x.sum() / float(x.count())}).sort_values('COUNT', ascending=False)
-print('My info sorted: \n%s' % sortRatingsField_MR[:15])
-=======
 RatingsField = cloneDF(mergeRatings)
 RatingsField = RatingsField.groupby(['movie_id', 'title'])['rating'].agg(
     {'COUNT': np.size, 'myAVG': lambda x: x.sum() / float(x.count())}).sort_values('COUNT', ascending=False)
 print('My info sorted: \n%s' % RatingsField[:15])
->>>>>>> 40c81fe436bfca9de876024fa507e9c4c2acd6e6
